@@ -1,0 +1,28 @@
+<h1 class='text-center'> Cronômetro </h1>
+
+<form class='container' name="form_main">
+
+  <div class='row d-flex justify-content-center'>
+    <div class='col-md-6 d-flex justify-content-center numbers'>
+      <span id="hour"> {{hora}} </span>
+      <span> : </span>
+      <span id="minute"> {{min}} </span>
+      <span> : </span>
+      <span id="second"> {{seg}} </span>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <div class="col d-flex justify-content-center p-0">
+      <button class='btn' type="button" name="start" (click)="start()">
+        <i class="fa fa-play fs-1" aria-hidden="true"></i>
+      </button>
+      <button class='btn' type="button" name="pause" (click)="pause()">
+        <i class="fa fa-pause fs-1" aria-hidden="true"></i>
+      </button>
+      <button class='btn' type="button" name="reset" (click)="reset()">
+        <i class="fa fa-undo fs-1" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</form>
