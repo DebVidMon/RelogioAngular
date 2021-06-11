@@ -1,0 +1,45 @@
+<h1 class='text-center'> Timer </h1>
+
+<form class='container' name="form_main">
+
+  <div class='row d-flex justify-content-center'>
+    <div *ngIf='isHidden' class='col-md-6 d-flex justify-content-center' id="divhide">
+      <div class="row">
+        <div class="col-md-6 align-items-center">
+          <div class="btn btn2" (click)="valores(1)">1 minutos</div>
+          <div class="btn btn2" (click)="valores(5)">5 minutos</div>
+          <div class="btn btn2" (click)="valores(10)">10 minutos</div>
+        </div>
+        <div class="col-md-6 align-items-center">
+          <div class="btn btn2" (click)="valores(15)">15 minutos</div>
+          <div class="btn btn2" (click)="valores(30)">30 minutos</div>
+          <div class="btn btn2" (click)="valores(60)">1 hora</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="isShown" class='row d-flex justify-content-center' id="divshow">
+    <div class='col-md-6 d-flex justify-content-center numbers'>
+      <span id="hour"> {{hora}} </span>
+      <span> : </span>
+      <span id="minute"> {{min}} </span>
+      <span> : </span>
+      <span id="second"> {{seg}} </span>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <div class="col d-flex justify-content-center p-0">
+      <button class='btn btn1' type="button" name="start" (click)="start()">
+        <i class="fa fa-play fs-1" aria-hidden="true"></i>
+      </button>
+      <button class='btn btn1' type="button" name="pause" (click)="pause()">
+        <i class="fa fa-pause fs-1" aria-hidden="true"></i>
+      </button>
+      <button class='btn btn1' type="button" name="reset" (click)="reset()">
+        <i class="fa fa-undo fs-1" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</form>

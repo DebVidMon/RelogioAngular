@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RelogioComponent } from './relogio/relogio.component';
 import { CronometroComponent } from './cronometro/cronometro.component';
+import { TimerComponent } from './timer/timer.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     RelogioComponent,
-    CronometroComponent
+    CronometroComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

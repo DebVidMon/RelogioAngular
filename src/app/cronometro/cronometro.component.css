@@ -2,6 +2,10 @@ span{
  font-size: 50pt;
  font-weight: 700;
 }
+
+h1{
+  padding: 0;
+}
 .btn{
  background-color: brown;
  color: white;
@@ -16,7 +20,4 @@ span{
 .btn:hover{
   background-color: darkred;
   box-shadow: 1px 1px 5px brown;
-}
-.numbers{
-  padding: 50px;
 }
