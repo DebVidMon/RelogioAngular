@@ -7,13 +7,15 @@ import { RelogioComponent } from './relogio/relogio.component';
 import { CronometroComponent } from './cronometro/cronometro.component';
 import { TimerComponent } from './timer/timer.component';
 import { FormsModule } from '@angular/forms';
+import { AlarmComponent } from './alarm/alarm.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RelogioComponent,
     CronometroComponent,
-    TimerComponent
+    TimerComponent,
+    AlarmComponent
   ],
   imports: [
     BrowserModule,

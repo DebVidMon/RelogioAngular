@@ -9,6 +9,9 @@ import Swal from 'sweetalert2';
 export class TimerComponent implements OnInit {
   mlseg: number;
   cron: any;
+  hora1: number;
+  min1: number;
+  seg1: number;
   hora: number;
   min: number;
   seg: number;
@@ -23,22 +26,13 @@ export class TimerComponent implements OnInit {
     this.hora = 0;
   }
 
-  valores(x: number) {
-    if (x < 60) {
-      this.min = x;
-    } else if (x >= 60) {
-      this.hora = x / 60;
-    }
-  }
-
-  // consertar o form
   start() {
     this.pause();
     this.isShown = !this.isShown;
     this.isHidden = !this.isHidden;
-    // this.hora = this.hora1;
-    // this.min = this.min1;
-    // this.seg = this.seg1;
+    if (this.hora1 > 0) { this.hora = this.hora1; } else { this.hora = 0; }
+    if (this.min1 > 0) { this.min = this.min1; } else { this.min = 0; }
+    if (this.seg1 > 0) { this.seg = this.seg1; } else { this.seg = 0; }
     this.mlseg = 0;
     this.cron = setInterval(() => { this.cronometro(); }, 100);
   }
@@ -51,10 +45,10 @@ export class TimerComponent implements OnInit {
     this.pause();
     this.isShown = !this.isShown;
     this.isHidden = !this.isHidden;
-    // this.hora = 0;
-    // this.min = 0;
-    // this.seg = 0;
-    // this.mlseg = 0;
+    this.hora = 0;
+    this.min = 0;
+    this.seg = 0;
+    this.mlseg = 0;
   }
 
   cronometro() {
@@ -74,9 +68,13 @@ export class TimerComponent implements OnInit {
             Swal.fire({
               text: 'Acabou o tempo',
               icon: 'info',
+              background: 'cornflowerblue',
               confirmButtonText: 'OK'
-            })
+            });
             this.pause();
+            this.hora = 0;
+            this.min = 0;
+            this.seg = 0;
           }
         }
       }
