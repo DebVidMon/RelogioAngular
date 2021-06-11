@@ -1,3 +1,4 @@
+import { AlarmComponent } from './alarm/alarm.component';
 import { RelogioComponent } from './relogio/relogio.component';
 import { TimerComponent } from './timer/timer.component';
 import { CronometroComponent } from './cronometro/cronometro.component';
@@ -9,6 +10,7 @@ const routes: Routes = [
   {path: 'cronometro' , component: CronometroComponent},
   {path: 'timer' , component: TimerComponent},
   {path: 'relogio' , component: RelogioComponent},
+  {path: 'alarm' , component: AlarmComponent},
 ];
 
 @NgModule({
