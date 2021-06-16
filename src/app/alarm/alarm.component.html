@@ -1,2 +1,7 @@
 <p>alarm works!</p>
-<input type="checkbox" checked data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger">
+<!--*ngFor="let checkbox" [checked]="checkbox == 'true'" -->
+<label class="switch" mb-5>
+  <input type="checkbox" [value]="checked == false" [checked]=" false" (change)="liga()" >
+  <span class="slider round"></span>
+</label>
+<div [ngClass]="status"> {{ONF}} </div>
