@@ -5,3 +5,24 @@
   <span class="slider round"></span>
 </label>
 <div [ngClass]="status"> {{ONF}} </div>
+
+<div>{{horario|date: "HH : mm"}}</div>
+
+<div *ngIf="isHidden" class='row d-flex justify-content-center'>
+  <div class='col-md-6 d-flex justify-content-center numbers'>
+    <input [(ngModel)] ="hora" type="number" placeholder="00">
+    <span> : </span>
+    <input [(ngModel)] ="minuto" type="number" placeholder="00">
+    <div class="btn" (click)="OK()">Ok</div>
+  </div>
+
+</div>
+
+<div *ngIf="isShown" class='row d-flex justify-content-center'>
+  <div class='col-md-6 d-flex justify-content-center numbers'>
+    <span id="hour"> {{hora}} </span>
+    <span> : </span>
+    <span id="minute"> {{minuto}} </span>
+    <div class="btn" (click)="OK()">Editar</div>
+  </div>
+</div>
