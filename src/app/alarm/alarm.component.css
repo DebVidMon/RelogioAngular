@@ -68,3 +68,7 @@ input:checked + .slider:before {
 .off{
   color: red
 }
+
+.erro{
+  color: red;
+}

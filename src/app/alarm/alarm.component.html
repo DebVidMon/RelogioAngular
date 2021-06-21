@@ -1,5 +1,5 @@
-<p>alarm works!</p>
 <!--*ngFor="let checkbox" [checked]="checkbox == 'true'" -->
+<div class="container mt-5 mb-5">
 <label class="switch" mb-5>
   <input type="checkbox" [value]="checked == false" [checked]=" false" (change)="liga()" >
   <span class="slider round"></span>
@@ -10,9 +10,11 @@
 
 <div *ngIf="isHidden" class='row d-flex justify-content-center'>
   <div class='col-md-6 d-flex justify-content-center numbers'>
-    <input [(ngModel)] ="hora" type="number" placeholder="00">
-    <span> : </span>
-    <input [(ngModel)] ="minuto" type="number" placeholder="00">
+    <input class="form-control ml-3 mr-3" [(ngModel)]="hora" type="number" placeholder="00" maxlength="2" (keyup) = "validaHora()">
+    <div class="ml-3 mr-3 erro">{{erroh}}</div>
+    <span class="ml-3 mr-3"> : </span>
+    <input class="form-control ml-3 mr-3"  [(ngModel)] ="minuto" type="number" placeholder="00" maxlength="2" (keyup) = "validaMinuto()">
+    <div class="ml-3 mr-3 erro">{{errom}}</div>
     <div class="btn" (click)="OK()">Ok</div>
   </div>
 
@@ -25,4 +27,5 @@
     <span id="minute"> {{minuto}} </span>
     <div class="btn" (click)="OK()">Editar</div>
   </div>
+</div>
 </div>

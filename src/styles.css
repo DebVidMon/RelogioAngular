@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+.paleta{
+color: #c0d0E8;
+color: #a8c0e0;
+color: #f8d0a0;
+color: #f8c090;
+color: #c09090;
+color: #B57E7E;
+color: #908890;
+color: #787888;
+}
+
+bg-azul{
+    background-color: #c0d0E8;
+}
+
+shadow-azul{
+    box-shadow: #a8c0e0;
+}
+
+bg-laranja{
+    background-color: #f8d0a0;
+}
+
+shadow-laranja{
+    box-shadow: #f8c090;
+}
+
+bg-tijolo{
+    background-color: #c09090;
+}
+
+shadow-tijolo{
+    box-shadow: #B57E7E;
+}
+
+bg-marrom{
+    background-color: #908890;
+}
+
+shadow-marrom{
+    box-shadow: #787888;
+}

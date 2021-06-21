@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RelogioComponent } from './relogio/relogio.component';
@@ -24,7 +22,6 @@ import { MenuComponent } from './menu/menu.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    TooltipModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,8 +14,11 @@ export class AlarmComponent implements OnInit {
   status: string;
   ONF: string;
 
+  erroh: string;
+  errom: string;
+
   horario = new Date();
-  intervalId:any;
+  intervalId: any;
   subscription: Subscription;
 
   hora: number;
@@ -43,6 +46,7 @@ export class AlarmComponent implements OnInit {
       // if checked
       this.status = 'on';
       this.ONF = 'On';
+      this.tocaAlarme();
     } else {
       // if unchecked
       this.status = 'off';
@@ -57,6 +61,22 @@ export class AlarmComponent implements OnInit {
     this.isHidden = !this.isHidden;
   }
 
+  validaHora(){
+    if(this.hora < 0 || this.hora > 23){
+      this.erroh = "Hora inválida";
+    } else {
+      this.erroh = '';
+    }
+  }
+
+  validaMinuto(){
+    if(this.minuto < 0 || this.minuto > 59){
+      this.errom = "Minuto inválido";
+    } else {
+      this.errom = '';
+    }
+  }
+
   tocaAlarme(){
     let hora1 = this.horario.getUTCHours();
     let minuto1 = this.horario.getUTCMinutes();
@@ -66,6 +86,39 @@ export class AlarmComponent implements OnInit {
     }
   }
 
+  // GetTime() {
+  //   var dt = new Date();
+  //   document.clock.local.value = IfZero(dt.getHours()) + ":" + IfZero(dt.getMinutes());
+  //   setTimeout("GetTime()", 1000);
+  //   curTime = (IfZero(dt.getHours()) + ":" + IfZero(dt.getMinutes()));
+  //   }
+  //   IfZero(num) {
+  //   return ((num <= 9) ? ("0" + num) : num);
+  //   }
+  //   alarmSet() {
+  //   hourNum = document.clock.hourOpt[document.clock.hourOpt.selectedIndex].value;
+  //   minNum = document.clock.minOpt[document.clock.minOpt.selectedIndex].value;
+  //   alarmTime = hourNum + ":" + minNum;
+  //   }
+  //   alarmOn() {
+  //   if (alarmTime == curTime) {
+  //   document.all.sound.src = document.clock.alarmSound.value;
+  //   }
+  //   else {
+  //   setTimeout("alarmOn()", 1000)
+  //      }
+  //   }
+  //   alarmOff() {
+  //   document.all.sound.src = "";
+  //   alarmTime="";
+  //   }
+  //   snooze() {
+  //   document.all.sound.src = "";
+  //   var snoozeL = parseInt(document.clock.snoozeOpt[document.clock.snoozeOpt.selectedIndex].value);
+  //   var snooze = new Date();
+  //   alarmTime = IfZero(snooze.getHours()) + ":" + IfZero(snooze.getMinutes() + snoozeL);
+  //   alarmOn();
+  //   }
 
   ngOnDestroy() {
     clearInterval(this.intervalId);
